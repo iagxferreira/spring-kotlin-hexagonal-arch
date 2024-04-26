@@ -15,8 +15,6 @@ class InsertCustomerAdapter(
     private val customerEntityMapper: CustomerEntityMapper,
 ): InsertCustomerOutputPort {
 
-
-
     override fun insert(customer: Customer) {
         val customerEntity = customerEntityMapper.toCustomerEntity(customer)
         customerRepository.save(customerEntity)
