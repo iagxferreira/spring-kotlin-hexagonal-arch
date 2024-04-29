@@ -7,3 +7,7 @@ spring:
   data:
     mongodb:
       uri: mongodb://localhost:27017/hexagonal
+      port: 27017
+      database: hexagonal
+      username: hexagonal
+      password: wLzVmDMfEP7JHUDO

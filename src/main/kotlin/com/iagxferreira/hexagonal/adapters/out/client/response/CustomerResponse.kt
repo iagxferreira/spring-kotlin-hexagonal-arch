@@ -1,4 +1,5 @@
-package com.iagxferreira.hexagonal.adapters.`in`.controller.response
+package com.iagxferreira.hexagonal.adapters.out.client.response
+
 
 data class CustomerResponse(
     private val name: String,

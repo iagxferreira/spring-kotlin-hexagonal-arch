@@ -11,7 +11,9 @@ class InsertCustomerUseCase(
 ): InsertCustomerInputPort {
     override fun insert(customer: Customer, zipCode: String) {
         val address = findAddressByZipCodeOutputPort.find(zipCode)
-        customer.address = address
+        if (address != null) {
+            customer.address = address
+        }
         insertCustomerOutputPort.insert(customer)
     }
 }

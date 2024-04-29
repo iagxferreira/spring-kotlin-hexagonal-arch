@@ -1,7 +1,11 @@
 package com.iagxferreira.hexagonal.adapters.out.client.response
 
 data class AddressResponse  (
-    private val street: String,
-    private val city: String,
-    private val state: String,
+    val cep: String,
+    val state: String,
+    val city: String,
+    val neighborhood: String,
+    val street: String,
+    val service: String,
+
 )
