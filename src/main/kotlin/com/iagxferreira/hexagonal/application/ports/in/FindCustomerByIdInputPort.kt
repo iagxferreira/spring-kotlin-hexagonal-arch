@@ -1,7 +1,7 @@
-package com.iagxferreira.hexagonal.application.ports.out
+package com.iagxferreira.hexagonal.application.ports.`in`
 
 import com.iagxferreira.hexagonal.application.core.domain.Customer
 
-interface FindCustomerByIdOutputPort {
+interface FindCustomerByIdInputPort {
     fun find(id: String): Customer?
 }

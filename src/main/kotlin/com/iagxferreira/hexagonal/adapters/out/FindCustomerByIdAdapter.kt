@@ -6,7 +6,6 @@ import com.iagxferreira.hexagonal.adapters.out.repository.entity.CustomerEntity
 import com.iagxferreira.hexagonal.application.core.domain.Customer
 import com.iagxferreira.hexagonal.application.ports.out.FindCustomerByIdOutputPort
 import org.springframework.beans.factory.annotation.Autowired
-import java.util.*
 
 class FindCustomerByIdAdapter(
     @Autowired

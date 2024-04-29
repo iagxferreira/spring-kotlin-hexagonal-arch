@@ -5,7 +5,6 @@ import com.iagxferreira.hexagonal.adapters.out.client.mapper.AddressResponseMapp
 import com.iagxferreira.hexagonal.application.core.domain.Address
 import com.iagxferreira.hexagonal.application.ports.out.FindAddressByZipCodeOutputPort
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.stereotype.Component
 
 class FindAddressByZipCodeAdapter (
    @Autowired
