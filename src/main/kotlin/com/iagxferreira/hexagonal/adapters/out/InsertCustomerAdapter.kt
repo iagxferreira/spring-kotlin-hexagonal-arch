@@ -7,24 +7,28 @@ import com.iagxferreira.hexagonal.application.core.domain.Customer
 import com.iagxferreira.hexagonal.application.ports.out.InsertCustomerOutputPort
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
+import java.util.*
 
 @Component
 class InsertCustomerAdapter(
     @Autowired
     private val customerRepository: CustomerRepository,
-): InsertCustomerOutputPort {
-
+) : InsertCustomerOutputPort {
     override fun insert(customer: Customer) {
-        customerRepository.save(CustomerEntity(
-            id = "",
-            name = customer.name,
-            document = customer.document,
-            validDocument = customer.validDocument,
-            address = AddressEntity(
-                street = customer.address.street,
-                city = customer.address.city,
-                state = customer.address.state
-            ),
-        ))
+        customer.let {
+            customerRepository.save(
+                CustomerEntity(
+                    id = UUID.randomUUID().toString(),
+                    name = it.name,
+                    document = it.document,
+                    validDocument = it.validDocument,
+                    address = AddressEntity(
+                        street = it.address.street,
+                        city = it.address.city,
+                        state = it.address.state
+                    ),
+                )
+            )
+        }
     }
 }

@@ -17,7 +17,7 @@ class FindCustomerByIdAdapter(
     override fun find(id: String): Customer? {
         val customerEntity: CustomerEntity? = customerRepository.findById(id).orElseThrow { RuntimeException("Customer not found") }
         return customerEntity?.let{
-            return Customer(
+            Customer(
                 name = it.name,
                 document = it.document,
                 validDocument = it.validDocument,
